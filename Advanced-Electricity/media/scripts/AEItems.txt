@@ -1,0 +1,31 @@
+module turminysAE
+{
+    /** https://pzwiki.net/wiki/Scripts_guide **/
+    
+    imports
+    {
+        Base, Radio, items, newitems
+    }
+
+    item ElectronicsScrap
+    {
+        DisplayCategory = Electronics,
+        Weight	=	0.1,
+        Type	=	Normal,
+        DisplayName	=	Electronics Scrap,
+        Icon	=	ElectronicsScrap,
+        MetalValue = 5,
+        WorldStaticModel = ElectronicsScrap,
+    }
+
+    item ExtensionCord
+    {
+        DisplayCategory = Electronics,
+        Weight	=	0.5,
+        Type	=	Normal,
+        DisplayName	=	Extension Cord,
+        Icon	=	ExtensionCord,
+        MetalValue = 5,
+        WorldStaticModel = ExtensionCord,
+    }
+}

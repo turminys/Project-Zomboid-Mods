@@ -1,0 +1,45 @@
+Function descriptions
+
+    /* Function getRandomValue()
+     * This can be used to calculate a base value for a crafted item, such as weight of
+     * item or Current draw for Electronics */
+
+    /* Code */
+        local function getRandomValue(valmin, valmax, perkLevel)
+            local range = valmax-valmin 
+            local r = ZombRandFloat(range*((perkLevel-1)/10),range*(perkLevel/10));
+            return valmin+r;
+        end
+    
+    /* Example Usage */
+        function Recipe.OnCreate.RadioCraft(items, result, player, selectedItem)
+            --TransmitRange		= 5000,
+            if result and result:getDeviceData() then
+                local data = result:getDeviceData();
+                local perk = player:getPerkLevel(Perks.Electricity);
+                local perkInvert = 10-perk+1;
+                local actualWeight = result:getScriptItem():getActualWeight()
+                if actualWeight <= 3.0 then
+                    result:setActualWeight(getRandomValue(1.5,3.0,perk));
+                else
+                    result:setActualWeight(actualWeight);
+                end
+                result:setWeight(result:getActualWeight())
+                result:setCustomWeight(true)
+                data:setUseDelta(getRandomValue(0.007,0.030,perkInvert));
+                data:setBaseVolumeRange(getRandomValue(8,16,perk));
+                data:setMinChannelRange(getRandomValue(200,88000,perkInvert));
+                data:setMaxChannelRange(getRandomValue(108000,1000000,perk));
+                data:setTransmitRange(getRandomValue(500,5000,perk));
+                data:setHasBattery(false);
+                data:setPower(0);
+                data:transmitBattryChange();
+                if perk == 10 then
+                    if ZombRand(0,100)<25 then --on max level 25% chance to craft a hightier device. Superior range, very low power consumption.
+                        data:setIsHighTier(true);
+                        data:setTransmitRange(ZombRand(5500,7500));
+                        data:setUseDelta(ZombRand(0.002,0.007));
+                    end
+                end
+            end
+        end

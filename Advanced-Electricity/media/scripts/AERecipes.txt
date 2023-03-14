@@ -1,0 +1,22 @@
+module TurminysAE
+{
+    imports
+    {
+        Base, Radio
+
+    }
+
+    recipe Make Remote Trigger
+    {
+       Receiver/Radio.RadioReceiver,
+       keep [Recipe.GetItemTypes.Screwdriver],
+       ElectronicsScrap=2,
+       Glue=2,
+
+       Result:TriggerCrafted,
+       SkillRequired:Electricity=2,
+       NeedToBeLearn:true,
+       Time:50.0,
+       Category:Electrical,
+    }
+}
