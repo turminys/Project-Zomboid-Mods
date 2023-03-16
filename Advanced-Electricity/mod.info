@@ -1,5 +1,4 @@
-name=Advanced-Electricity
-id=Advanced-Electricity
-description=Enhanced recipes and items to expand on vanilla Electrician skills
+name=Turminys' Advanced Electricity
 poster=poster.png
-tiledef=Advanced-Electricity
+id=Turminys-AE
+description=Enhanced recipes and items to expand on vanilla Electrician skills

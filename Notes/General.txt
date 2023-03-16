@@ -43,3 +43,35 @@ Function descriptions
                 end
             end
         end
+
+    /*
+
+-------------------------------------------------------------------------
+
+    /* Function instanceof()
+     * This can be used to calculate a base value for a crafted item, such as weight of
+     * item or Current draw for Electronics */
+
+    /* Code */
+        local function getRandomValue(valmin, valmax, perkLevel)
+            local range = valmax-valmin 
+            local r = ZombRandFloat(range*((perkLevel-1)/10),range*(perkLevel/10));
+            return valmin+r;
+        end
+
+    /* Example Usage */
+    if instanceof(v, "IsoGenerator") then
+        generator = v;
+    end
+    */
+
+-------------------------------------------------------------------------
+
+    /* !Template! Function <function_name>()
+     * Basic interpretation of what function is doing in game */
+
+    /* Code */
+        <what the actual code is doing>
+
+    /* Example Usage */
+        Example of code being used

@@ -1,31 +1,45 @@
 module turminysAE
 {
-    /** https://pzwiki.net/wiki/Scripts_guide **/
-    
-    imports
-    {
-        Base, Radio, items, newitems
-    }
-
-    item ElectronicsScrap
+    /* DC to AC inverter. Hook a car battery up to power lights. */
+    item T_PowerInverter
     {
         DisplayCategory = Electronics,
-        Weight	=	0.1,
-        Type	=	Normal,
-        DisplayName	=	Electronics Scrap,
-        Icon	=	ElectronicsScrap,
-        MetalValue = 5,
-        WorldStaticModel = ElectronicsScrap,
-    }
-
-    item ExtensionCord
-    {
-        DisplayCategory = Electronics,
-        Weight	=	0.5,
-        Type	=	Normal,
-        DisplayName	=	Extension Cord,
-        Icon	=	ExtensionCord,
-        MetalValue = 5,
-        WorldStaticModel = ExtensionCord,
-    }
+        Weight = 5.0,
+        Type =	Normal,
+        DisplayName	=	Power Inverter,
+        Icon = World_T_PowerInverter64x64,
+        MetalValue = 25,
+        ConditionMax = 100,
+        WorldStaticModel = World_T_PowerInverter64x64,
+        Tooltip = Tooltip_Item_TPowerInverter,
+		IsTelevision = FALSE,
+		IsPortable = FALSE,
+		IsHighTier = FALSE,
+		UseWhileEquipped = FALSE,
+		DisappearOnUse = FALSE,
+		TwoWay = FALSE,
+    },
 }
+
+		Type			= Radio,
+		Icon			= HamRadioCivilian,
+		Weight          	= 20.0,
+		ConditionMax	= 100,
+
+		DisplayName		= Premium Technologies Ham Radio Connected to Grid,
+        
+		UseDelta		= 0.010, 
+		UseWhileEquipped	= FALSE,
+		DisappearOnUse		= FALSE,
+		TwoWay			= TRUE,
+		TransmitRange		= 12000,
+		MicRange		= 5,
+		BaseVolumeRange		= 10,
+		IsPortable		= FALSE,
+		IsTelevision		= FALSE,
+		MinChannel		= 10000,
+		MaxChannel		= 500000,
+		UsesBattery		= FALSE,
+		IsHighTier		= FALSE,
+		WorldObjectSprite	= appliances_com_01_0,
+		Tooltip = no battery required. Needs power source.,

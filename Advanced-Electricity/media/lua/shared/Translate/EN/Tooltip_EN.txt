@@ -1,0 +1,4 @@
+Tooltip_EN = {
+    /* Turminys Tooltips List*/
+    Tooltip_Item_TPowerInverter = "Converts a Direct Current (DC) power supply to Alternating Current (AC) power. <br>Could be used to provide power to low amperage devices such as radios and lights.<br>Requires level 3 Electrical skill to use."
+}

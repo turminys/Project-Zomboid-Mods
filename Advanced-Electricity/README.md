@@ -82,3 +82,14 @@ Advanced Electricity and Electronics
  Recipe:
   - Scrap Electronics
   - Chance of dropping from 
+
+
+*TODOS and Ideas*
+Add failure conditions to apply shock and burn damage
+ - If low electrical skill, then chance to damage the condition of the item, as well as apply a burn status from an electric shock. 
+ - Correct the inventory model and world models for inverter
+ - Review generator code to make inverter work like generator. Except it will need battery instead of gasoline for fuel.
+  - Need to decide if battery can be repaired/repacked. May do so, but with diminishing returns. 
+
+ - Statuses
+  - Look into adding custom status , such as shock status instead of burn. maybe it affects endurance or something over time
